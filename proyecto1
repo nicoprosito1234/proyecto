@@ -1,0 +1,293 @@
+<html> 
+<head > 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título Parpadeante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex; /* Para centrar el h1 en la página completa */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ocupa el 100% del alto de la ventana */
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .titulo-parpadeante {
+            display: flex; /* Convierte el h1 en un contenedor flex */
+            justify-content: center; /* Centra horizontalmente los elementos hijos */
+            font-size: 3.5em; /* Tamaño grande para el texto */
+            font-weight: bold; /* Negrita */
+            white-space: nowrap; /* Evita que las palabras se rompan en líneas diferentes */
+        }
+
+        /* Animación de parpadeo */
+        @keyframes parpadear {
+            0%, 100% { opacity: 1; } /* Completamente visible */
+            50% { opacity: 0; }    /* Completamente invisible */
+        }
+
+        /* Estilos y animaciones para cada palabra */
+        .palabra1 {
+            color: #FF5733; /* Naranja rojizo */
+            animation: parpadear 1.5s infinite alternate;
+            margin-right: 15px; /* Espacio entre palabras */
+        }
+
+        .palabra2 {
+            color: #33A1FF; /* Azul brillante */
+            animation: parpadear 1.5s infinite alternate 0.5s; /* Retraso de 0.5s */
+            margin-right: 15px; /* Espacio entre palabras */
+        }
+
+        .palabra3 {
+            color: #33FF57; /* Verde brillante */
+            animation: parpadear 1.5s infinite alternate 1s; /* Retraso de 1s */
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="titulo-parpadeante">
+        <span class="palabra1">Proyecto</span>
+        <span class="palabra2">Área</span>
+        <span class="palabra3">Técnica</span>
+    </h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Materias y Trimestres</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px 80px 20px 80px;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  /* Imagen izquierda */
+  #img-html {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Escudo derecha */
+  #escudo-colegio {
+    width: 80px;
+    height: 80px;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Contenedor materias */
+  #materias {
+    width: 700px;
+  }
+
+  /* Estilo para cada materia */
+  .materia {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+  }
+
+  /* Colores diferentes para cada materia */
+  #materia1 { background-color: #e74c3c; } /* rojo */
+  #materia2 { background-color: #3498db; } /* azul */
+  #materia3 { background-color: #27ae60; } /* verde */
+  #materia4 { background-color: #f39c12; } /* naranja */
+  #materia5 { background-color: #9b59b6; } /* morado */
+  #materia6 { background-color: #16a085; } /* teal */
+
+  /* Título de materia */
+  .materia > button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.4em;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+    outline: none;
+  }
+
+  /* Contenedor de trimestres (oculto/visible) */
+  .trimestres {
+    background: white;
+    padding: 15px;
+    border-radius: 0 0 8px 8px;
+    color: black;
+    display: none;
+  }
+
+  /* Trimestre individual */
+  .trimestre {
+    margin-bottom: 15px;
+  }
+
+  .trimestre label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .trimestre textarea {
+    width: 100%;
+    height: 80px;
+    resize: vertical;
+    padding: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img id="img-html" src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="Logo HTML5" />
+  <img id="escudo-colegio" src="C:\Users\USER1\Downloads\ssssssssss.jfif" alt="Escudo Colegio" />
+</header>
+
+<main>
+  <div id="materias">
+
+    <div class="materia" id="materia1">
+      <button type="button" onclick="toggleTrimestres('trimestres1')">SOPORTE TECNICO</button>
+      <div class="trimestres" id="trimestres1">
+        <div class="trimestre">
+          <label for="mat1-tri1">Trimestre 1</label>
+          <textarea id="mat1-tri1" placeholder="Escribe aquí información del trimestre 1..."></textarea>
+        </div>
+        <div class="trimestre">
+          <label for="mat1-tri2">Trimestre 2</label>
+          <textarea id="mat1-tri2" placeholder="Escribe aquí información del trimestre 2..."></textarea>
+        </div>
+        <div class="trimestre">
+          <label for="mat1-tri3">Trimestre 3</label>
+          <textarea id="mat1-tri3" placeholder="Escribe aquí información del trimestre 3..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="materia" id="materia2">
+      <button type="button" onclick="toggleTrimestres('trimestres2')">SISTEMAS OPERATIVOS</button>
+      <div class="trimestres" id="trimestres2">
+        <div class="trimestre">
+          <label for="mat2-tri1">Trimestre 1</label>
+          <textarea id="mat2-tri1" placeholder="Escribe aquí información del trimestre 1..."></textarea>
+        </div>
+        <div class="trimestre">
+          <label for="mat2-tri2">Trimestre 2</label>
+          <textarea id="mat2-tri2" placeholder="Escribe aquí información del trimestre 2..."></textarea>
+        </div>
+        <div class="trimestre">
+          <label for="mat2-tri3">Trimestre 3</label>
+          <textarea id="mat2-tri3" placeholder="Escribe aquí información del trimestre 3..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="materia" id="materia3">
+      <button type="button" onclick="toggleTrimestres('trimestres3')">OFIMATICA</button>
+      <div class="trimestres" id="trimestres3">
+        <div class="trimestre">
+          <label for="mat3-tri1">Trimestre 1</label>
+          <textarea id="mat3-tri1" placeholder="Escribe aquí información del trimestre 1..."></textarea>
+        </div>
+        <div class="trimestre">
+          <label for="mat3-tri2">Trimestre 2</label>
+          <textarea id="mat3-tri2" placeholder="Escribe aquí información del trimestre 2..."></textarea>
+        </div>
+        <div class="trimestre">
+          <label for="mat3-tri3">Trimestre 3</label>
+          <textarea id="mat3-tri3" placeholder="Escribe aquí información del trimestre 3..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="materia" id="materia4">
+      <button type="button" onclick="toggleTrimestres('trimestres4')">DISEÑO WEB</button>
+      <div class="trimestres" id="trimestres4">
+        <div class="trimestre">
+          <label for="mat4-tri1">Trimestre 1</label>
+          <textarea id="mat4-tri1" placeholder="Escribe aquí información del trimestre 1..."></textarea>
+        </div>
+        <div class="trimestre">
+          <label for="mat4-tri2">Trimestre 2</label>
+          <textarea id="mat4-tri2" placeholder="Escribe aquí información del trimestre 2..."></textarea>
+        </div>
+        <div class="trimestre">
+          <label for="mat4-tri3">Trimestre 3</label>
+          <textarea id="mat4-tri3" placeholder="Escribe aquí información del trimestre 3..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="materia" id="materia5">
+      <button type="button" onclick="toggleTrimestres('trimestres5')">PROGRAMACION Y BASE DE DATOS</button>
+      <div class="trimestres" id="trimestres5">
+        <div class="trimestre">
+          <label for="mat5-tri1">Trimestre 1</label>
+          <textarea id="mat5-tri1" placeholder="Escribe aquí información del trimestre 1..."></textarea>
+        </div>
+        <div class="trimestre">
+          <label for="mat5-tri2">Trimestre 2</label>
+          <textarea id="mat5-tri2" placeholder="Escribe aquí información del trimestre 2..."></textarea>
+        </div>
+        <div class="trimestre">
+          <label for="mat5-tri3">Trimestre 3</label>
+          <textarea id="mat5-tri3" placeholder="Escribe aquí información del trimestre 3..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="materia" id="materia6">
+      <button type="button" onclick="toggleTrimestres('trimestres6')">FOLL</button>
+      <div class="trimestres" id="trimestres6">
+        <div class="trimestre">
+          <label for="mat6-tri1">Trimestre 1</label>
+          <textarea id="mat6-tri1" placeholder="Escribe aquí información del trimestre 1..."></textarea>
+        </div>
+        <div class="trimestre">
+          <label for="mat6-tri2">Trimestre 2</label>
+          <textarea id="mat6-tri2" placeholder="Escribe aquí información del trimestre 2..."></textarea>
+        </div>
+        <div class="trimestre">
+          <label for="mat6-tri3">Trimestre 3</label>
+          <textarea id="mat6-tri3" placeholder="Escribe aquí información del trimestre 3..."></textarea>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script>
+  function toggleTrimestres(id) {
+    const div = document.getElementById(id);
+    if (div.style.display === 'block') {
+      div.style.display = 'none';
+    } else {
+      div.style.display = 'block';
+    }
+  }
+</script>
+
+</body>
+</html>
